@@ -1,0 +1,23 @@
+body{
+background: linear-gradient(to right,
+rgb(32, 32, 117),
+rgba(28, 33, 105, 0.719),
+rgb(23, 27, 83),
+rgb(30, 30, 83));
+color: black;
+text-align: center;
+font-size: 24px;
+}
+
+a{
+text-decoration: none;
+color: blueviolet;
+
+}
+
+a:hover{
+background-color: darkmagenta;
+padding: 4px 8px;
+margin-right: 16px;
+border-radius: 8px;
+}

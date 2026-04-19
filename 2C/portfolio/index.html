@@ -7,24 +7,82 @@
     
     <style>
         :root {
-            --fundo: #1F2A44;
+            --fundo: #263238;
             --texto: #ffffff;
+            --texto-destaque: #9900ff;
         }
 
         body {
             margin: 0;
+            padding: 0;
         }
 
-        .portugol {
+        section.portugol {
             background-color: var(--fundo);
             color: var(--texto);
+            padding: 20px;
+            display: grid;
+            grid-template: "h h" "i t" / 1fr 1.1fr;
+            gap: 10px;
+        }
+
+        .portugol h1 {
+            font-family: 'nunito', sans-serif;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            grid-area: h;
+            justify-self: center;
+        }
+
+        .portugol h1 img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .portugol .img img {
+            grid-area: i;
+            max-width: 100%;
+        }
+
+        .portugol .text {
+            grid-area: t;
+        }
+
+        .portugol h2 {
+            font-family: sans-serif;
+        }
+
+        .portugol h3 {
+            font-family: 'consolas';
+            color: red;
+        }
+        
+        .portugol p {
+            font-family: 'consolas';
+        }
+        
+        .portugol p span {
+            font-weight: bolder;
+            font-family: 'consolas';
+            color: var(--texto-destaque);
         }
     </style>
 </head>
 <body>
     <section class="portugol">
-        <h1><img src="https://avatars.githubusercontent.com/u/62000942?s=200&v=4" alt="Portugol Studio Símbolo">Portugol Studio</h1>
-        <h2>prof Carlos</h2>
+        <h1>
+            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/portugol-simbol.png" alt="Portugol Studio Símbolo">
+            Portugol Studio
+        </h1>
+        <div class="img">
+            <img src="fotos/foto-funcao.png" alt="Portugol Studio Foto">
+        </div>
+        <div class="text">
+            <h2>prof Carlos</h2>
+            <h3>funções</h3>
+            <p><span>Descrição:</span> Descrição das funções do Portugol Studio.</p>
+        </div>
     </section>
 </body>
 </html>

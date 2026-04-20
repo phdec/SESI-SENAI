@@ -1,0 +1,20 @@
+{
+  "name": "01prova",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start01": "node prova01.js",
+    "start02": "node prova02.js",
+    "start03": "node prova03.js",
+    "start04": "node prova04.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

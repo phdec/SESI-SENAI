@@ -1,5 +1,5 @@
 programa
-{	// programa da estrutura para faça. Nome teórico
+{	// programa da estrutura para faça. Nome teórico
 	
 	funcao inicio()
 	{
@@ -27,5 +27,4 @@ programa
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

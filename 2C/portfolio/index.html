@@ -23,7 +23,7 @@
             color: var(--texto);
             padding: 20px;
             display: grid;
-            grid-template: "h h" "i1 t1" / 1fr 1fr;
+            grid-template: "h h" "i t"/ 1fr 1fr;
             gap: 20px;
         }
 
@@ -46,16 +46,16 @@
         }
 
         .portugol .img img {
-            grid-area: i1;
+            grid-area: i;
             max-width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .portugol .text {
-            grid-area: t1;
+            grid-area: t;
         }
 
-        .portugol h2 {
+        .portugol h2, .vscode h2 {
             font-family: sans-serif;
             font-weight: normal;
         }
@@ -75,12 +75,13 @@
             color: var(--texto-destaque);
         }
 
+
         section.vscode {
             background-color: var(--fundovsc);
             color: var(--texto);
             padding: 20px;
             display: grid;
-            grid-template: "h h" / 1fr 1fr;
+            grid-template: "h h" "i t" / 1fr 1fr;
         }
         
         .vscode h1 {
@@ -91,9 +92,35 @@
             gap: 10px;
         }
 
+        .vscode .title h3 {
+            font-family: 'Franklin Gothic';
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vscode > .title .sub-title {
+            display: flex;
+            gap: 10px;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .vscode .title .sub-title h3 img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .vscode .img img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            grid-area: i;
+        }
+
         @media (max-width: 640px) {
-            section.portugol {
-                grid-template: "h" "i1" "t1" / 1fr;
+            section.portugol, section.vscode {
+                grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
             }
         }
@@ -109,7 +136,7 @@
             <h2>Professor Carlos</h2>
         </div>
         <div class="img">
-            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-funcao.png" alt="Portugol Studio Foto">
+            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-funcao-por.png" alt="Portugol Studio Foto">
         </div>
         <div class="text">
             <h3>funções</h3>
@@ -117,18 +144,30 @@
             <p><span>Reflexão:</span> Aprender sobre funções é muito importante e útil para a programação como um todo. Servindo para organizar o código, dividir o trabalho e facilitar a manutenção.</p>
         </div>
     </section>
+
     <section class="vscode">
         <div class="title">
             <h1>
                 <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/vscode-simbol.png" alt="VS Code Símbolo">
                 Visual Studio Code
             </h1>
+            <h2>Professor Carlos</h2>
+            <div class="sub-title">
+                <h3>
+                    <img src="simbolos/javascript-simbol.png" alt="JavaScript Símbolo">
+                    JavaScript
+                </h3>
+                <h3>
+                    <img src="simbolos/nodejs-simbol.svg" alt="Node.js Símbolo">
+                    Node.js
+                </h3>
+            </div>
         </div>
         <div class="img">
-            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-funcao.png" alt="VS Code Foto">
+            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-js-vscode.png" alt="VS Code Foto">
         </div>
         <div class="text">
-
+            
         </div>
     </section>
 </body>

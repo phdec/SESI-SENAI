@@ -6,9 +6,11 @@
     <title>Portfólio</title>
     
     <style>
+
         :root {
             --fundop: #263238;
             --fundovsc: #1A1B26;
+            --fundoexcel: #565757;
             --texto: #ffffff;
             --texto-destaque: #9900ff;
         }
@@ -16,6 +18,12 @@
         body {
             margin: 0;
             padding: 0;
+        }
+
+        .logprogram > h1, .logprogram > h2, .tecinfcom > h1, .tecinfcom > h2 {
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: var(--texto-destaque);
         }
 
         section.portugol {
@@ -39,7 +47,12 @@
             height: 50px;
         }
         
-        .portugol .title, .vscode .title {
+        .excel h1 img {
+            width: 50px;
+            height: 30px;
+        }
+        
+        .portugol .title, .vscode .title, .excel .title {
             grid-area: h;
             justify-self: center;
             text-align: center;
@@ -58,11 +71,6 @@
 
         .portugol .text {
             grid-area: t;
-        }
-
-        .portugol h2, .vscode h2 {
-            font-family: sans-serif;
-            font-weight: normal;
         }
 
         .portugol h3 {
@@ -132,6 +140,26 @@
             grid-area: i;
         }
 
+
+        section.excel {
+            background-color: var(--fundoexcel);
+            display: grid;
+            grid-template: "h h" "i t" / 1fr 1fr;
+            gap: 20px;
+            font-family: 'calibri';
+            color: white;
+        }
+
+        .excel .title h1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .excel .text p span {
+            font-weight: bold;
+            color: var(--texto-destaque)
+        }
+
         @media (max-width: 640px) {
             section.portugol, section.vscode {
                 grid-template: "h" "i" "t" / 1fr;
@@ -141,48 +169,71 @@
     </style>
 </head>
 <body>
-    <section class="portugol">
-        <div class="title">
-            <h1>
-                <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/portugol-simbol.png" alt="Portugol Studio Símbolo">
-                Portugol Studio
-            </h1>
+        <section class="logprogram">
+            <h1>Lógica de programação</h1>
             <h2>Professor Carlos</h2>
-        </div>
-        <div class="img">
-            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-funcao-por.png" alt="Portugol Studio Foto">
-        </div>
-        <div class="text">
-            <h3>funções</h3>
-            <p><span>Descrição:</span> Neste exercício, nós estudamos sobre funções em Portugol.</p>
-            <p><span>Reflexão:</span> Aprender sobre funções é muito importante e útil para a programação como um todo. Servindo para organizar o código, dividir o trabalho e facilitar a manutenção.</p>
-        </div>
-    </section>
-
-    <section class="vscode">
-        <div class="title">
-            <h1>
-                <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/vscode-simbol.png" alt="VS Code Símbolo">
-                Visual Studio Code
-            </h1>
-            <h2>Professor Carlos</h2>
-            <div class="sub-title">
-                <h3 id="separador">
-                    <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/javascript-simbol.png" alt="JavaScript Símbolo">
-                    JavaScript
-                </h3>
-                <h3>
-                    <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/nodejs-simbol.svg" alt="Node.js Símbolo">
-                    Node.js
-                </h3>
-            </div>
-        </div>
-        <div class="img">
-            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-js-vscode.png" alt="VS Code Foto">
-        </div>
-        <div class="text">
-            <p><span>Descrição:</span></p>
-        </div>
-    </section>
+            <section class="portugol">
+                <div class="title">
+                    <h1>
+                        <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/portugol-simbol.png" alt="Portugol Studio Símbolo">
+                        Portugol Studio
+                    </h1>
+                </div>
+                <div class="img">
+                    <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-funcao-por.png" alt="Portugol Studio Foto">
+                </div>
+                <div class="text">
+                    <h3>funções</h3>
+                    <p><span>Descrição:</span> Nesta questão, nós estudamos sobre funções em Portugol.</p>
+                    <p><span>Reflexão:</span> Aprender sobre funções é muito importante e útil para a programação como um todo. Servindo para organizar o código, dividir o trabalho e facilitar a manutenção.</p>
+                    <p><span>Habilidades:</span> H4 - Elaborar algoritmos utilizando estruturas de sequência, decisão e repetição.<br> 
+                    H5 - Identificar elementos e estruturas da lógica de programação.<br>
+                    H7 - Testar e depurar algoritmos, validando resultados conforme requisitos proposto</p>
+                </div>
+            </section>
+            <section class="vscode">
+                <div class="title">
+                    <h1>
+                        <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/vscode-simbol.png" alt="VS Code Símbolo">
+                        Visual Studio Code
+                    </h1>
+                    <div class="sub-title">
+                        <h3 id="separador">
+                            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/javascript-simbol.png" alt="JavaScript Símbolo">
+                            JavaScript
+                        </h3>
+                        <h3>
+                            <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/simbolos/nodejs-simbol.svg" alt="Node.js Símbolo">
+                            Node.js
+                        </h3>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-js-vscode.png" alt="VS Code Foto">
+                </div>
+                <div class="text">
+                    <p><span>Descrição:</span></p>
+                </div>
+            </section>
+        </section>
+        <section class="tecinfcom">
+            <h1>Tecnologia, Informação e Comunicação I</h1>
+            <h2>Professor Maçaneiro</h2>
+            <section class="excel">
+                <div class="title">
+                    <h1>
+                        <img src="https://logosmarcas.net/wp-content/uploads/2022/02/Excel-365Excel-2016-2019-Logo.png" alt="Excel Símbolo">
+                        Excel
+                    </h1>
+                </div>
+                <div class="img">
+                    img
+                </div>
+                <div class="text">
+                    <h3>Excel 4.1</h3>
+                    <p><span>Descrição:</span> Nesse exercício nós desenvolvemos um excel para o cálculo de controle de estoque, onde foram utilizadas fórmulas </p>
+                </div>
+            </section>
+        </section>
 </body>
 </html>

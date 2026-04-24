@@ -7,11 +7,23 @@
     
     <style>
 
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         :root {
             --fundop: #263238;
             --fundovsc: #1A1B26;
             --fundoexcel: #565757;
-            --texto: #ffffff;
+            --texto: white;
             --texto-destaque: #9900ff;
         }
 
@@ -20,7 +32,26 @@
             padding: 0;
         }
 
-        .logprogram > h1, .logprogram > h2, .tecinfcom > h1, .tecinfcom > h2 {
+        section.uncurricular {
+            section.uncurricular {
+            background: linear-gradient(
+                270deg,
+                #1a1a2e,
+                #2a1a40,
+                #9900ff,
+                #2a1a40,
+                #1a1a2e
+            );
+            background-size: 400%;
+            animation: gradientMove 10s ease infinite;
+            padding: 30px 0;
+}
+            box-shadow: inset 0 0 80px rgba(153, 0, 255, 0.2);
+        }
+
+        .uncurricular > h1, .uncurricular > h2 {
+            
+            margin-top: 0px;
             text-align: center;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             color: var(--texto-destaque);
@@ -121,7 +152,7 @@
             height: 40px;
         }
 
-        .sub-title h3#separador::after {
+        .vscode .sub-title h3#separador::after {
             content: "";
             display: inline-block;
             width: 1px;
@@ -141,12 +172,13 @@
         }
 
         .vscode .text {
-            font-family: 'jetbrains mono';
+            font-family: 'jetbrains mono', 'consolas';
+            font-size: 0.9em;
         }
 
         .vscode p span {
             font-weight: bolder;
-            font-family: 'jetbrains mono';
+            font-family: 'jetbrains mono', 'consolas';
             color: var(--texto-destaque);
         }
 
@@ -158,6 +190,7 @@
             gap: 20px;
             font-family: 'calibri';
             color: white;
+            padding: 20px;
         }
         
         .excel .title h1 {
@@ -171,21 +204,29 @@
             height: 29px;
         }
 
+        .excel .text > h3 {
+            color: #1D6F42;
+        }
+
         .excel .text p span {
             font-weight: bold;
             color: var(--texto-destaque)
         }
 
         @media (max-width: 640px) {
-            section.portugol, section.vscode {
+            section.portugol, section.vscode, section.excel {
                 grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
             }
         }
     </style>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-        <section class="logprogram">
+        <section class="uncurricular">
             <h1>Lógica de programação</h1>
             <h2>Professor Carlos</h2>
             <section class="portugol">
@@ -236,7 +277,7 @@
                 </div>
             </section>
         </section>
-        <section class="tecinfcom">
+        <section class="uncurricular">
             <h1>Tecnologia, Informação e Comunicação I</h1>
             <h2>Professor Maçaneiro</h2>
             <section class="excel">
@@ -247,11 +288,20 @@
                     </h1>
                 </div>
                 <div class="img">
-                    img
+                    <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-excel.png" alt="Excel Foto">
                 </div>
                 <div class="text">
                     <h3>Excel 4.1</h3>
                     <p><span>Descrição:</span> Nesse exercício desenvolvemos um excel para o cálculo de controle de estoque, onde foram utilizadas fórmulas e funções do Excel. </p>
+                    <p><span>Reflexão:</span> Estudar a sobre as fórmulas e funções do Excel pode ser muito útil para ocasiões de trabalho de empresas, sendo também importante para lógica de banco de dados, ferramenta de dados e dados de automação.</p>
+                    <p><span>Habilidades:</span> Avaliação Objetiva (hardware, software e sistemas operacionais)
+                            Compreender os conceitos básicos de hardware, software e sistemas operacionais
+                            <br>
+                            Ferramentas de Escritório (ATIVIDADES PEQUENAS)
+                            Aplicar ferramentas digitais para organização, produção e comunicação
+                            Utilizar tecnologias de informação de forma ética e segura
+                            Empregar softwares básicos de produtividade na comunicação técnica
+                            Produzir textos técnicos e comunicacionais com clareza e assertividade </p>
                 </div>
             </section>
         </section>

@@ -211,11 +211,19 @@
             color: var(--texto-destaque)
         }
 
-        @media (max-width: 800px) {
+        @media (600px < width <= 800px) {
             section.portugol, section.vscode, section.excel {
                 grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
                 padding: 0px 30px 30px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section.portugol, section.vscode, section.excel {
+                grid-template: "h" "i" "t" / 1fr;
+                gap: 0;
+                padding: 0px 10px 10px 10px;
             }
         }
     </style>

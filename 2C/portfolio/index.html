@@ -33,19 +33,16 @@
         }
 
         section.uncurricular {
-            section.uncurricular {
             background: linear-gradient(
                 270deg,
                 #1a1a2e,
                 #2a1a40,
-                #9900ff,
+                #7800c9,
                 #2a1a40,
-                #1a1a2e
-            );
-            background-size: 400%;
-            animation: gradientMove 10s ease infinite;
-            padding: 30px 0;
-}
+                #1a1a2e );
+            background-size: 300%;
+            animation: gradientMove 20s ease infinite;
+            padding: 10px 0px 0px 0px;
             box-shadow: inset 0 0 80px rgba(153, 0, 255, 0.2);
         }
 
@@ -90,7 +87,7 @@
             align-items: center;
         }
 
-        .portugol .img img {
+        .portugol .img img, .vscode .img img, .excel .img img {
             max-width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -166,11 +163,6 @@
             align-items: center;
         }
 
-        .vscode .img img {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 100%;
-        }
-
         .vscode .text {
             font-family: 'jetbrains mono', 'consolas';
             font-size: 0.9em;
@@ -198,6 +190,12 @@
             align-items: center;
             gap: 10px;
         }
+
+        .excel .img {
+            grid-area: i;
+            display: flex;
+            align-items: center;
+        }
         
         .excel h1 img {
             width: 30px;
@@ -205,7 +203,7 @@
         }
 
         .excel .text > h3 {
-            color: #1D6F42;
+            color: #1BA466;
         }
 
         .excel .text p span {
@@ -213,10 +211,11 @@
             color: var(--texto-destaque)
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 800px) {
             section.portugol, section.vscode, section.excel {
                 grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
+                padding: 0px 30px 30px 30px;
             }
         }
     </style>

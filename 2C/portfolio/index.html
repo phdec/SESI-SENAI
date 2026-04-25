@@ -163,9 +163,13 @@
             align-items: center;
         }
 
-        .vscode .text {
+        .vscode .text p {
             font-family: 'jetbrains mono', 'consolas';
-            font-size: 0.9em;
+        }
+        
+        .vscode .text h3 {
+            font-family: 'jetbrains mono', 'consolas';
+            color: #8C77D8;
         }
 
         .vscode p span {
@@ -185,6 +189,10 @@
             padding: 20px;
         }
         
+        .excel .title {
+            grid-area: h;
+        }
+
         .excel .title h1 {
             display: flex;
             align-items: center;
@@ -195,6 +203,10 @@
             grid-area: i;
             display: flex;
             align-items: center;
+        }
+
+        .excel .text {
+            grid-area: t;
         }
         
         .excel h1 img {
@@ -211,19 +223,39 @@
             color: var(--texto-destaque)
         }
 
-        @media (600px < width <= 800px) {
+        @media (768px < width <= 992px) {
+            section.excel {
+                grid-template: "h" "i" "t" / 1fr;
+            }
+        }
+
+        @media (592px < width <= 768px) {
             section.portugol, section.vscode, section.excel {
                 grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
                 padding: 0px 30px 30px 30px;
             }
+
+            .portugol .text, .vscode .text, .excel .text {
+                line-height: 1.5;
+                text-align: justify;
+            }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 592px) {
+            section.uncurricular {
+                animation: none;
+            }
+
             section.portugol, section.vscode, section.excel {
                 grid-template: "h" "i" "t" / 1fr;
                 gap: 0;
                 padding: 0px 10px 10px 10px;
+            }
+
+            .portugol .text, .vscode .text, .excel .text {
+                line-height: 1.5;
+                text-align: justify;
             }
         }
     </style>
@@ -276,6 +308,7 @@
                     <img src="https://raw.githubusercontent.com/phdec/SESI-SENAI/refs/heads/main/2C/portfolio/fotos/foto-js-vscode.png" alt="VS Code Foto">
                 </div>
                 <div class="text">
+                    <h3>funções</h3>
                     <p><span>Descrição:</span> Esta é uma questão da prova de funções em Portugol Studio convertida para node.js no Visual Studio Code.</p>
                     <p><span>Reflexão:</span> JavaScript é uma linguagem de programação muito utilizada para o desenvolvimento de aplicações web, muito utilizado em trabalhos profissionais. Estudar Node.js também ajuda a enteder um pouco sobre o back-end. </p>
                     <p><span>Habilidades:</span> H4 - Elaborar algoritmos utilizando estruturas de sequência, decisão e repetição.<br> 

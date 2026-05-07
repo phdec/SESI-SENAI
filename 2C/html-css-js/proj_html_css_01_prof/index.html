@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./prog_conv_moeda.js"defer></script>
+    <title>Principal</title>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    <br>
+    <label for="valorReais">Digite o valor em R$:</label><br>
+    <input type="text" id="valorReais"><br><br>
+    <select id="opcao">
+        <option value="rial" selected>Converter para Rial</option>
+        <option value="shekel">Converter Shekel</option>
+        <option value="dolarAust">Converter Dolar Australiano</option>
+    </select><br><br>
+    <button onclick="principal()">Calcular</button><br><br>
+    <div id="resposta"></div>
+</body>
+</html>

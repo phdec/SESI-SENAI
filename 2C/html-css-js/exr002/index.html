@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de áreas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"defer></script>
+</head>
+<body>
+    <h1>Cálculo de áreas de figuras geométricas</h1>
+    <label for="lado">Lado do Triângulo</label>
+    <input type="number" id="lado">
+
+    <label for="D">Diagonal maior do Losango</label>
+    <input type="number" id="D">
+    <label for="d"></label>Diagonal menor do Losango</label>
+    <input type="number" id="d">
+
+    <label for="B">Trapézio B</label>
+    <input type="number" id="B">
+    <label for="b"></label>Trapézio b</label>
+    <input type="number" id="b">
+    <label for="h"></label>Altura do Trapézio</label>
+    <input type="number" id="h">
+
+    <select id="op">
+        <option value="triangulo">Triângulo</option>
+        <option value="losango">Losango</option>
+        <option value="trapezio">Trapézio</option>
+    </select>
+    <button onclick="main()">Calcular</button>
+    <p id="resposta"></p>
+</body>
+</html>

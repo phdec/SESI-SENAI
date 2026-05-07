@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to top right, rgb(94, 0, 94), rgb(165, 0, 165), rgb(211, 0, 211));
+    height: 100vh;
+    font-size: 1.1rem;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-size: 300%;
+    animation: gradientMove 10s ease infinite;
+}
+
+
+button, input, select {
+    padding: 5px;
+    border-radius: 15px;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 10px;
+    width: 30vw;
+    align-self: center;
+    text-align: center;
+}
+
+button:hover{
+    background-color: rgb(39, 39, 39);
+    transition: all 0.3s;
+    color: white;
+    cursor: pointer;
+}
+
+option{
+    border-radius: 5px;
+}
+
+p {
+    font-weight: bold;
+}

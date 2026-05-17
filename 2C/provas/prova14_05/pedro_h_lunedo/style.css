@@ -1,0 +1,11 @@
+body {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    background-color: green;
+}
+
+button, select {
+    background-color: black;
+    color: white;
+}

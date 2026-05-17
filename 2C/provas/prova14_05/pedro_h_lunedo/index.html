@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>volumes</title>
+    <script src="01.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calcular volumes de figuras geométricas</h1>
+    <label for="raio">Digite o valor do raio: </label>
+    <input type="number" id="raio"><br>
+    <label for="altura">Digite o valor da altura: </label>
+    <input type="number" id="altura"><br>
+    <label for="op">Selecione a figura que deseja calcular: </label>
+    <select id="op">
+        <option value="esfera">Esfera</option>
+        <option value="cone">Cone</option>
+        <option value="cilindro">Cilindro</option>
+    </select>
+    <button onclick="main()">Calcular</button>
+    <p id="resposta"></p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "name": "indexjs",
+  "version": "1.0.0",
+  "description": "Programa de somar 2 numeros",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "author": "Pedro Henrique",
+  "license": "ISC"
+}

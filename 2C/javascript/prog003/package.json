@@ -1,0 +1,16 @@
+{
+  "name": "prog003",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index2.js"
+  },
+  "keywords": [],
+  "author": "Pedro",
+  "license": "MIT",
+  "description": "Programa para escolher a função e realizar",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exr003</title>
+    <script src="script.js"defer></script>
+</head>
+<body>
+    <h1>Medição de pesos</h1>
+    <label for="quantidade">Digite a quantidade de testes: </label>
+    <input type="number" id="quantidade" placeholder="Valor">
+    <label for="opcao">Escolha a sua opção:</label>
+    <select id="opcao">
+        <option value="baixo">Medir Baixos</option>
+        <option value="medio">Medir Médios</option>
+        <option value="alto">Medir Altos</option>
+    </select>
+    <button onclick="main()">Calcular</button>
+    <p id="resposta"></p>
+</body>
+</html>

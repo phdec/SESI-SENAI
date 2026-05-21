@@ -13,6 +13,38 @@ function calcTrapezio(B, b, h){
     return ((B * b) * h) / 2
 }
 
+function limparCampos(){
+    let todosOsCampos = document.querySelectorAll('.triangulo, .losango, .trapezio')
+    todosOsCampos.forEach(campos => {campos.style.display = 'none'})
+}
+
+function mostrarCampos(){
+    let op = document.getElementById('op').value // opção
+    switch(op){
+        case 'triangulo':
+            const triangulo = document.querySelectorAll('.triangulo')
+            limparCampos()
+            triangulo.forEach(triangulos => {
+                triangulos.style.display = 'block'
+            })
+            break
+            case 'losango':
+            const losango = document.querySelectorAll('.losango')
+            limparCampos()
+            losango.forEach(losangos => {
+                losangos.style.display = 'block'
+            })
+        break
+        case 'trapezio':
+            const trapezio = document.querySelectorAll('.trapezio')
+            limparCampos()
+            trapezio.forEach(trapezios => {
+                trapezios.style.display = 'block'
+            })
+        break
+    }
+}
+
 function main(){
     let op = document.getElementById('op').value // opção
     let lado = Number(document.getElementById('lado').value)

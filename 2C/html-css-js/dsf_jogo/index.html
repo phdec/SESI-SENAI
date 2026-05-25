@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhação</title>
+    <script src="script.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>O número está entre 1 e 100.</h1>
+    <div id="tentativas">
+        <label for="qtTentativas">Em quantas tentativas:</label>
+        <input type="number" id="qtTentativas" placeholder="Ex: 12" min="1">
+        <button id="definirTentativas">Começar</button>
+    </div>
+    <div id="jogo">
+        <label for="chute">Digite seu chute:</label>
+        <input type="number" id="chute" placeholder="Ex: 67" min="1" max="100">
+        <button id="verificarChute">Enviar</button>
+    </div>
+    <button id="jogarNovamente">Jogar Novamente</button>
+    <div id="resultado"></div>
+    <div id="tentativasRestantes"></div>
+</body>
+</html>

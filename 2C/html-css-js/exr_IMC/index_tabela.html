@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <script src="script_html_tabela.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <label for="opcao">Selecione a sua opção: </label><br>
+    <select id="opcao">
+        <option value="c">Calcular o IMC</option>
+        <option value="v">Verificar o índice do IMC</option>
+    </select><br>
+
+    <label for="peso">Digite o peso: </label><br>
+    <input type="number" id="peso"><br>
+    <label for="altura">Digite a altura: </label><br>
+    <input type="number" id="altura"><br>
+    <button onclick="main()">Calcular</button>
+    
+    <section class="tabela">
+        <div id="resposta"></div>
+    </section>
+</body>
+</html>

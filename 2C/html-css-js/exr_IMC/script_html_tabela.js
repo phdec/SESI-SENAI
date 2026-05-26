@@ -16,7 +16,7 @@ function verificarIMC(imc){
     }else if(imc >= 30 && imc < 40){
         classificacao = 'Obesidade'
     }else if(imc >= 40){
-        classificacao = 'Obesiade grave'
+        classificacao = 'Obesidade grave'
     }else{classificacao = 'Erro.'}
 
     return classificacao
@@ -25,7 +25,7 @@ function verificarIMC(imc){
 function fazerTabela(classificacao, imc){
     let tabela = ''
     tabela += `
-                <table>
+                <table class="tabIMC">
                 <thead class="tabIMC">
                     <th class="tabIMC">IMC</th>
                     <th class="tabIMC">Classificação</th>
@@ -36,8 +36,7 @@ function fazerTabela(classificacao, imc){
                         <td class="tabIMC">${classificacao}</td>
                     </tr>
                 </tbody>
-                </table>
-            `
+                </table>`
     return tabela
 }
 

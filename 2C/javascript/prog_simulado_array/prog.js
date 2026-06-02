@@ -1,32 +1,35 @@
-let numeros = []
-
 function sortear(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function verImpar(numeros){
-    let soma = 0
+    let soma = 0, contador = 0
+    console.log('-Ímpares-')
     for(let i = 0; i < 10; i++){
         if(numeros[i] % 2 !== 0){
             soma += numeros[i]
-            console.log(numeros[i])
+            contador++
+            console.log(`${contador}º ${numeros[i]}`)
         }
-        return soma
     }
+    return soma
 }
 function verPar(numeros){
-    let soma = 0
+    let soma = 0, contador = 0
+    console.log('-Pares-')
     for(let i = 0; i < 10; i++){
         if(numeros[i] % 2 === 0){
             soma += numeros[i]
-            console.log(numeros[i])
+            contador++
+            console.log(`${contador}º ${numeros[i]}`)
         }
-        return soma
     }
+    return soma
 }
 
 function principal(){
-let opcao = 1, somaImpares, somaPares
+    let numeros = []
+    let opcao = 1, somaImpares, somaPares
 
 	switch(opcao){
 	case 1:
@@ -40,7 +43,7 @@ let opcao = 1, somaImpares, somaPares
         somaImpares = verImpar(numeros)
         somaPares = verPar(numeros)
 
-        console.log(somaImpares + ', ' + somaPares)
+        console.log(`Soma dos ímpares: ${somaImpares}\nSoma dos pares: ${somaPares}`)
     break
 	}
 }

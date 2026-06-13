@@ -30,6 +30,7 @@ button, select {
     align-self: center;
     text-align: center;
     background-color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 input {
@@ -42,12 +43,12 @@ input {
     border-bottom: 3px solid purple;
     color: white;
     padding-bottom: 5px;
+    transition: border-bottom 0.3s;
 }
 
 input:focus {
     outline: none;
     border-bottom: 3px solid white;
-    transition: border-bottom 0.3s;
 }
 
 select {
@@ -56,12 +57,12 @@ select {
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 1.5rem;
+    transition: box-shadow 0.3s;
 }
 
 select:hover {
     appearance: none;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.404);
-    transition: box-shadow 0.3s;
 }
 
 select:focus {
@@ -71,7 +72,6 @@ select:focus {
 
 button:hover {
     background-color: rgb(39, 39, 39);
-    transition: all 0.3s;
     color: white;
     cursor: pointer;
 }

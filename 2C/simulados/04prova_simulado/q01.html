@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="q01.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>q01</title>
+</head>
+<body>
+    <h1>Sistema para gerar níveis de poluição</h1>
+    <p><strong>Gere 50 níveis de poluição</strong> aleatórios (entre 1 e
+200), classifique cada faixa como: Baixo (1 a 60), Moderado (61 a 140) e Alto (151 a 200)</p>
+    <button id="botãoGerar">Gerar</button>
+    <div id="saida">
+        <table>
+            <thead>
+                <tr>
+                    <th>classificação</th>
+                    <th>níveis</th>
+                    <th>média</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>baixos</th>
+                    <td id="nivelBaixos"></td>
+                    <td id="mediaBaixos"></td>
+                </tr>
+                <tr>
+                    <th>médios</th>
+                    <td id="nivelMedios"></td>
+                    <td id="mediaMedios"></td>
+                </tr>
+                <tr>
+                    <th>altos</th>
+                    <td id="nivelAltos"></td>
+                    <td id="mediaAltos"></td>
+                </tr>
+                <tr>
+                    <th>geral</th>
+                    <td id="nivelGeral"></td>
+                    <td id="mediaGeral"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

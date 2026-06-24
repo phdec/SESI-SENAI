@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="q01.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>q01</title>
+</head>
+<body>
+    <h1>Cálculo de volumes</h1>
+    <label for="aresta">Digite a aresta:</label>
+    <input type="text" id="aresta"><br><br>
+    <label for="comprimento">Digite o comprimento:</label>
+    <input type="text" id="comprimento"><br><br>
+    <label for="largura">Digite a largura:</label>
+    <input type="text" id="largura"><br><br>
+    <label for="altura">Digite a altura:</label>
+    <input type="text" id="altura"><br><br>
+
+    <label for="opcao">Escolha sua opção:</label>
+    <select id="opcao">
+        <option value="cubo">Cubo</option>
+        <option value="paralelepipedo">Paralelepípedo</option>
+        <option value="piramide">Pirâmide</option>
+    </select>
+    <button onclick="main()">Calcular</button>
+    <div id="resp"></div>
+</body>
+</html>

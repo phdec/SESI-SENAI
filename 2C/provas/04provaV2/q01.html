@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="q01.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>consumo de agua</title>
+</head>
+<body>
+    <h1>Sistema de monitoramento de consumo
+    de água inteligente</h1>
+    <p>gere 60 registros de consumo aleatórios
+    (entre 1 e 150 litros) e os classifique em três faixas: Consumo Econômico: 1 a 50 litros, Consumo
+    Normal: 51 a 100 litros e Consumo Elevado: 101 a 150 litros.</p>
+    <button id="gerarRegistros">gerar</button>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>geral
+                    <th>economicos
+                    <th>normais
+                    <th>elevados
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>
+                    <td>
+                    <td>
+                    <td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Médias</th>
+                </tr>
+                <tr id="trTfoot">
+                    <td>
+                    <td>
+                    <td>
+                    <td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

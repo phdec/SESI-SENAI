@@ -3,7 +3,8 @@ programa
 inclua biblioteca Util --> util
 
 ```
-funcao inicio(){
+funcao inicio()
+{
     // =====================================
     // CRIE DUAS MATRIZES 4x4
     //
@@ -12,12 +13,15 @@ funcao inicio(){
     // =====================================
 
     // ===== INÍCIO DO CÓDIGO =====
-    cadeia oceano[4][4]
-    cadeia tela[4][4]
+
+
+
     // ===== FIM DO CÓDIGO =====
+
     inteiro linha
     inteiro coluna
-    cadeia opcao
+
+    inteiro naviosEncontrados = 0
 
     // =====================================
     // PREENCHA A MATRIZ oceano COM 🌊
@@ -30,12 +34,9 @@ funcao inicio(){
     // =====================================
 
     // ===== INÍCIO DO CÓDIGO =====
-    para(linha = 0; linha < 4; linha++){
-        para(coluna = 0; coluna < 4; coluna++){
-            oceano[linha][coluna] = "🌊"
-            tela[linha][coluna] = "⬜"
-        }
-    }
+
+
+
     // ===== FIM DO CÓDIGO =====
 
     // =====================================
@@ -46,11 +47,13 @@ funcao inicio(){
 
     inteiro naviosCriados = 0
 
-    enquanto(naviosCriados < 3){
+    enquanto(naviosCriados < 3)
+    {
         linha = util.sorteia(0,3)
         coluna = util.sorteia(0,3)
 
-        se(oceano[linha][coluna] == "🌊"){
+        se(oceano[linha][coluna] == "🌊")
+        {
             oceano[linha][coluna] = "🚢"
             naviosCriados++
         }
@@ -59,10 +62,10 @@ funcao inicio(){
     // =====================================
     // LOOP PRINCIPAL DO JOGO
     // =====================================
-    inteiro naviosEncontrados = 0
 
-    enquanto(naviosEncontrados < naviosCriados){
-        // limpa()
+    enquanto(naviosEncontrados < 3)
+    {
+        limpa()
 
         escreva("=== BATALHA NAVAL ===\n")
         escreva("Navios destruídos: ", naviosEncontrados, "/3\n\n")
@@ -72,7 +75,7 @@ funcao inicio(){
         //
         // Exemplo:
         //
-        //    0   1   2  3
+        //    0 1 2 3
         // 0  ⬜ ⬜ ⬜ ⬜
         // 1  ⬜ ⬜ ⬜ ⬜
         // 2  ⬜ ⬜ ⬜ ⬜
@@ -82,15 +85,8 @@ funcao inicio(){
         // =====================================
 
         // ===== INÍCIO DO CÓDIGO =====
-        escreva("   0   1   2  3\n")
-        para(linha = 0; linha < 4; linha++){
-            escreva(linha, " ")
 
-            para(coluna = 0; coluna < 4; coluna++){
-                escreva(" ", tela[linha][coluna])
-            }
-            escreva("\n")
-        }
+
 
         // ===== FIM DO CÓDIGO =====
 
@@ -103,7 +99,8 @@ funcao inicio(){
         // Não altere este trecho.
         // =====================================
 
-        faca{
+        faca
+        {
             escreva("\nLinha (0 a 3): ")
             leia(linhaEscolhida)
 
@@ -115,11 +112,13 @@ funcao inicio(){
             {
                 escreva("\n❌ Posição inválida!\n")
             }
-            senao se(tela[linhaEscolhida][colunaEscolhida] != "⬜"){
+            senao se(tela[linhaEscolhida][colunaEscolhida] != "⬜")
+            {
                 escreva("\n⚠️ Você já atirou aqui!\n")
             }
 
-        }enquanto(
+        }
+        enquanto(
             linhaEscolhida < 0 ou linhaEscolhida > 3 ou
             colunaEscolhida < 0 ou colunaEscolhida > 3 ou
             tela[linhaEscolhida][colunaEscolhida] != "⬜"
@@ -141,20 +140,13 @@ funcao inicio(){
         // =====================================
 
         // ===== INÍCIO DO CÓDIGO =====
-        se(oceano[linhaEscolhida][colunaEscolhida] == "🚢"){
-            escreva("\nVocê acertou um navio!\n")
-            tela[linhaEscolhida][colunaEscolhida] = "🚢"
-            naviosEncontrados++
-        }senao{
-            escreva("\nVocê atirou no mar!\n")
-            tela[linhaEscolhida][colunaEscolhida] = "🌊"
-        }
+
 
 
         // ===== FIM DO CÓDIGO =====
 
         escreva("\nPressione ENTER para continuar...")
-        leia(opcao)
+        leia()
     }
 
     // FIM DO JOGO
@@ -167,7 +159,7 @@ funcao inicio(){
 
     // ===== INÍCIO DO CÓDIGO =====
 
-    escreva("\n\n🎉 Você destruiu todos os navios!")
+
 
     // ===== FIM DO CÓDIGO =====
 }

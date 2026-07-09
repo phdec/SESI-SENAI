@@ -36,8 +36,8 @@ funcao inicio(){
       inteiro naviosCriados = 0
 
       enquanto(naviosCriados < 3){
-          linha = util.sorteia(0,3)
-          coluna = util.sorteia(0,3)
+          linha = util.sorteia(0,tamanho - 1)
+          coluna = util.sorteia(0,tamanho - 1)
 
           se(oceano[linha][coluna] == "🌊"){
               oceano[linha][coluna] = "🚢"
@@ -74,24 +74,23 @@ funcao inicio(){
 
 
           faca{
-              escreva("\nLinha (0 a ", tamanho, "): ")
+              escreva("\nLinha (0 a ", tamanho - 1, "): ")
               leia(linhaEscolhida)
 
-              escreva("Coluna (0 a ", tamanho, "): ")
+              escreva("Coluna (0 a ", tamanho - 1, "): ")
               leia(colunaEscolhida)
 
-              se(linhaEscolhida < 0 ou linhaEscolhida > tamanho ou
-                colunaEscolhida < 0 ou colunaEscolhida > tamanho)
+              se(linhaEscolhida < 0 ou linhaEscolhida >= tamanho ou
+                colunaEscolhida < 0 ou colunaEscolhida >= tamanho)
               {
-                  escreva("\n❌ Posição inválida!\n")
+                  escreva("\n❌ Posição inválida! Digite novamente.\n")
               }
               senao se(tela[linhaEscolhida][colunaEscolhida] != "⬜"){
                   escreva("\n⚠️ Você já atirou aqui!\n")
               }
-
           }enquanto(
-              linhaEscolhida < 0 ou linhaEscolhida > 3 ou
-              colunaEscolhida < 0 ou colunaEscolhida > 3 ou
+              linhaEscolhida < 0 ou linhaEscolhida > tamanho - 1 ou
+              colunaEscolhida < 0 ou colunaEscolhida > tamanho - 1 ou
               tela[linhaEscolhida][colunaEscolhida] != "⬜"
           )
 

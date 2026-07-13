@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="filtragem.js"defer></script>
+    <link rel="stylesheet" href="agua.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Filtragem de Dados</title>
+</head>
+<body>
+
+    <aside>
+        <h1>Projetos</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="agua.html">💧 Monitoramento de água</a></li>
+                <li><a href="glicemia.html">🩸 Monitoramento de glicemia</a></li>
+                <li><a href="#" class="select">📊 Filtragem de dados</a></li>
+                <li><a href="rotas.html">📮 Rotas de correio</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <div class="container">
+
+            <h1>Centro de Pesquisas Matemáticas</h1>
+
+            <p>
+                São sorteados 30 números entre 1 e 200. Escolha um divisor
+                para calcular a soma e a média dos seus múltiplos.
+            </p>
+
+            <div class="containerBotoes">
+                <button id="sortear">Sortear números</button>
+                <button id="btn11">Múltiplos de 11</button>
+                <button id="btn13">Múltiplos de 13</button>
+                <button id="btn17">Múltiplos de 17</button>
+            </div>
+            <div id="resultado">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Número</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="result">
+                    <h2>Múltiplos de</h2>
+                    <p><strong>Quantidade:</strong></p>
+                    <p><strong>Soma:</strong></p>
+                    <p><strong>Média:</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

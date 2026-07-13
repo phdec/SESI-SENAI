@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rotas.js"defer></script>
+    <link rel="stylesheet" href="agua.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Rotas de Correio</title>
+</head>
+<body>
+
+    <aside>
+        <h1>Projetos</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="agua.html">💧 Monitoramento de água</a></li>
+                <li><a href="glicemia.html">🩸 Monitoramento de glicemia</a></li>
+                <li><a href="filtragem.html">📊 Filtragem de dados</a></li>
+                <li><a href="#" class="select">📮 Rotas de correio</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <div class="container">
+            <h1>Classificação Automática das Rotas de Entrega</h1>
+            <p>
+                Gere um relatório das rotas de entrega. As rotas múltiplas de 10
+                são classificadas como <strong>Rotas Principais</strong> e as
+                demais como <strong>Rotas Secundárias</strong>.
+            </p>
+            <button id="gerarRelatorio">
+                Gerar Relatório
+            </button>
+            <div id="resultado">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

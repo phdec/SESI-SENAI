@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +20,14 @@
                 <li><a href="index.html">🏠 Home</a></li>
                 <li><a href="agua.html">💧 Monitoramento de água</a></li>
                 <li><a href="#" class="select">🩸 Monitoramento de glicemia</a></li>
-                <li><a href="">📊 Filtragem de dados</a></li>
+                <li><a href="filtragem.html">📊 Filtragem de dados</a></li>
                 <li><a href="">📮 Rotas de correio</a></li>
             </ul>
         </nav>
     </aside>
 
     <main>
+        <div class="container">
 
         <h1>Sistema de Monitoramento de Glicemia</h1>
 
@@ -35,10 +37,14 @@
             Normal (71 a 100 mg/dL) e
             Hiperglicemia (101 a 200 mg/dL).
         </p>
+        <p>glicemia = [
+        65, 92, 110, 84, 150, 68, 75, 98, 120, 105,
+        88, 72, 140, 60, 95, 102, 115, 82, 79, 130,
+        69, 91, 108, 85, 125
+    ]</p>
 
         <button id="classificar">Classificar</button>
 
-        <div>
 
             <table>
 
@@ -93,4 +99,5 @@
     </main>
 
 </body>
+
 </html>

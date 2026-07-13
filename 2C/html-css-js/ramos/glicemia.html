@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="glicemia.js" defer></script>
+    <link rel="stylesheet" href="agua.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Monitoramento de Glicemia</title>
+</head>
+
+<body>
+
+    <aside>
+        <h1>Projetos</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="agua.html">💧 Monitoramento de água</a></li>
+                <li><a href="#" class="select">🩸 Monitoramento de glicemia</a></li>
+                <li><a href="">📊 Filtragem de dados</a></li>
+                <li><a href="">📮 Rotas de correio</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+
+        <h1>Sistema de Monitoramento de Glicemia</h1>
+
+        <p>
+            Classifique os registros de glicemia em três categorias:
+            Hipoglicemia (1 a 70 mg/dL),
+            Normal (71 a 100 mg/dL) e
+            Hiperglicemia (101 a 200 mg/dL).
+        </p>
+
+        <button id="classificar">Classificar</button>
+
+        <div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Posição</th>
+                        <th>Hipoglicemia</th>
+                        <th>Normal</th>
+                        <th>Hiperglicemia</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tbody">
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+                        <th colspan="4">Médias</th>
+                    </tr>
+
+                    <tr>
+                        <th>Geral</th>
+                        <th>Hipoglicemia</th>
+                        <th>Normal</th>
+                        <th>Hiperglicemia</th>
+                    </tr>
+
+                    <tr id="trTfoot">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tfoot>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

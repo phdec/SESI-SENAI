@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 9px 15px;
+    background-color: #006adb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: #006adb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.493);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background-color: #ccc;
+}
+
+tbody > tr:nth-child(even) {
+    background-color: #eee;
+}

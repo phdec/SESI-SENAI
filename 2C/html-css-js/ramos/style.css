@@ -115,7 +115,7 @@ div > p {
     color: rgba(0, 0, 0, 0.531);
 }
 
-#resultado hr.linha {
+#resultado hr.linhas {
     border: none;
     border-top: 2px solid #585858;
     height: 1px;

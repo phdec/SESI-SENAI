@@ -1,5 +1,5 @@
 let botaoGerar = document.getElementById('gerarRelatorio')
-let resultado = document.getElementById('resultado')
+let resultado = document.getElementById('rotas')
 
 function gerarESepararRotas() {
 
@@ -44,23 +44,25 @@ function main() {
     
     <h2>Relatório de Rotas</h2>
 
-    <hr>
-
+    <hr class="linha">
+    
     <section>
-
-        <h3>📦 Rotas Principais</h3>
-
-        <p><strong>Quantidade:</strong> ${resposta.rotasPrincipais.length}</p>
-
+    
+    <h3>📦 Rotas Principais</h3>
+    
+    <p><strong>Quantidade:</strong> ${resposta.rotasPrincipais.length}</p>
+    
         <p><strong>Soma:</strong> ${resposta.somaPrincipais.toFixed(2)}</p>
-
+        
         <p><strong>Média:</strong> ${resposta.mediaPrincipais.toFixed(2)}</p>
-
+        
         <p><strong>Rotas:</strong></p>
-
+        
         <p>${resposta.rotasPrincipais.join(', ')}</p>
-
+        
     </section>
+    
+    <hr class="linha">
 
     <section>
 

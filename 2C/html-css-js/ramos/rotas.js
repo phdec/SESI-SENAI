@@ -44,7 +44,7 @@ function main() {
     
     <h2>Relatório de Rotas</h2>
 
-    <hr class="linha">
+    <hr class="rotas">
     
     <section>
     
@@ -62,7 +62,7 @@ function main() {
         
     </section>
     
-    <hr class="linha">
+    <hr class="rotas">
 
     <section>
 

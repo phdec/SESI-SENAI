@@ -126,3 +126,10 @@ div > p {
     margin: 20px 0;
     flex: 0 0 100%;
 }
+
+@media (max-width: 1120px) {
+    div#resultado > div#result {
+        position: static;
+        align-self: center;
+    }
+}

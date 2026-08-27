@@ -31,6 +31,37 @@ public class Exr3 {
         
         System.out.println("Matriculado (true/false): ");
         boolean matriculado = teclado.nextBoolean();
+        
+        System.out.println(" --- DADOS INFORMADOS --- ");
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Altura: " + altura);
+        System.out.println("Matriculado: " + matriculado);
+        
+        teclado.close();
+        
+        System.out.println("\n --- Conversões --- ");
+        
+        // String para int
+        String textoIdade = "18";
+        int idade1 = Integer.parseInt(textoIdade);
+        System.out.println("Idade: " + idade1);
+        
+        // String para double
+        
+        String textoNota = "8.5";
+        double nota = Double.parseDouble(textoNota);
+        System.out.println("Nota: " + nota);
+        
+        String textoSalario = "1500,50";
+        float salario = Float.parseFloat(textoSalario);
+        System.out.println("Salario: " + salario);
+        
+        // Int para String
+        
+        int numero = 100;
+        String textoNumero = String.valueOf(numero);
+        System.out.println("Numero: " + textoNumero);
     }
     
 }

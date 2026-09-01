@@ -107,3 +107,6 @@ SELECT * FROM maquinas WHERE nome LIKE '%01';
 
 -- todas as maquinas que tenham '0' em qualquer lugar
 SELECT * FROM maquinas WHERE nome LIKE '%0%';
+
+-- seleciona os técnicos com especialidade automação do turno da manhã ordenado
+SELECT * FROM tecnicos WHERE especialidade = "Automacao" AND turno = 'Manha' ORDER BY nome ASC; -- asc / desc

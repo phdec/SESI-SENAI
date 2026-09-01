@@ -104,3 +104,6 @@ SELECT * FROM maquinas WHERE nome LIKE 'Torno %';
 
 -- todas as maquinas que terminam com 01
 SELECT * FROM maquinas WHERE nome LIKE '%01';
+
+-- todas as maquinas que tenham '0' em qualquer lugar
+SELECT * FROM maquinas WHERE nome LIKE '%0%';

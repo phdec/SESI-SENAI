@@ -33,6 +33,9 @@ public class Exr04_JOptionPane {
         );
        
        if (resposta == JOptionPane.YES_OPTION) {
-        JOptionPane.showMessageDialog(null, "Você escolheu SIM!");}
+        JOptionPane.showMessageDialog(null, "Você escolheu SIM!");
+       } else {
+           JOptionPane.showMessageDialog(null, "Você escolheu não!");
+       }
 }
 }

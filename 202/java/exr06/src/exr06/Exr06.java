@@ -18,9 +18,18 @@ public class Exr06 {
         // TODO code application logic here
         
         String nome = JOptionPane.showInputDialog("Digite o nome de jogador: ");
-        
+        int pontuacaoGeral = 0;
         for(int i = 0; i < 3; i++){
+            pontuacaoGeral += Integer.parseInt(JOptionPane.showInputDialog("Digite a pontuação da " + (i+1) + "° partida: "));
+        }
+        
+        if(pontuacaoGeral > 100){
+            JOptionPane.showMessageDialog(null, "Jogador " + nome + " passou!"
+                    + "\nPontuação geral: " + pontuacaoGeral);
             
+        }else {
+            JOptionPane.showMessageDialog(null, "Jogador " + nome + " não passou!"
+            + "\nPontuação geral: " + pontuacaoGeral);
         }
     }
     

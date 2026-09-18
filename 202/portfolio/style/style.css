@@ -2,6 +2,7 @@
 
 :root {
     --mysql-dark-blue: #00546B;
+    --mysql-blue: #00758F;
     --mysql-orange: #F29111;
 }
 
@@ -10,39 +11,103 @@
   padding: 0;
 }
 
-.uncurricular > .titulo {
+.materia > .titulo {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('https://storage.empregare.com/empresas/big/8cf68b6e-9bed-4522-839b-c9dab38f92e7.png') no-repeat center center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://storage.empregare.com/empresas/big/8cf68b6e-9bed-4522-839b-c9dab38f92e7.png') no-repeat center center / cover;
     color: white;
     text-align: center;
     padding: 50px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
 }
 
-.materia {
+.atividade {
     display: grid;
     grid-template: "h h" "i t" / 1fr 1fr;
     gap: 20px;
     padding: 20px;
 }
 
-.mysql > .titulo {
+.atividade > .titulo {
     grid-area: h;
     text-align: center;
-    color: var(--mysql-dark-blue);
-    font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
-.materia > .titulo > h1 img {
+.atividade > .titulo > h1 img {
     width: 30px;
     height: 30px;
 }
 
+.atividade > .texto {
+    grid-area: t;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+.atividade > .texto > p > span {
+    color: red;
+    font-weight: bold;
+}
+
+.atividade > .imagem {
+    grid-area: i;
+}
+
+.atividade > .imagem img {
+    width: 100%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .mysql {
-    background-color: lightgray;
+    background-color: #f8f8f8;
     color: black;
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.mysql > .texto > h2 {
-    color: var(--mysql-orange)
+.mysql > .titulo {
+   
+    color: var(--mysql-dark-blue);
+    font-family: "Trebuchet MS", Arial, sans-serif;
 }
+
+.mysql > .texto > h2 {
+    color: var(--mysql-blue);
+    font-family: Consolas;
+}
+
+.mysql > .texto > p {
+    font-family: Consolas;
+}
+
+.mysql > .texto > p > span {
+    color: var(--mysql-orange);
+    font-weight: bold;
+}
+
+@media (592px < width <= 768px) {
+            section.atividade {
+                grid-template: "h" "i" "t" / 1fr;
+                padding: 30px;
+            }
+
+            .texto {
+                line-height: 1.5;
+                text-align: justify;
+            }
+        }
+
+@media (max-width: 592px) {
+            section.atividade {
+                grid-template: "h" "i" "t" / 1fr;
+                gap: 0;
+                padding: 10px;
+            }
+
+            .texto {
+                line-height: 1.5;
+                text-align: justify;
+            }
+        }

@@ -27,6 +27,7 @@
     grid-template: "h h" "i t" / 1fr 1fr;
     gap: 20px;
     padding: 20px;
+    background-color: white;
 }
 
 .atividade > .titulo {

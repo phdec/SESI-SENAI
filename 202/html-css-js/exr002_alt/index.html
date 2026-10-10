@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Gastos</title>
+    <script src="https://kit.fontawesome.com/b7eb7e2783.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"defer></script>
 </head>
@@ -12,7 +13,10 @@
         <h1>Meu controle de gastos</h1>
         <section class="saldo">
             <p>Saldo Disponível</p>
-            <h2 id="saldo"></h2>
+            <div class="saldo-container">
+                <h2 id="saldo"></h2>
+                <button id="alterarSaldo"><i class="fa-solid fa-pen"></i></button>
+            </div>
         </section>
         <section class="formulario">
             <input type="text" id="descricao" placeholder="Descrição do gasto">

@@ -9,6 +9,7 @@
     --verde: #0f3d33;
     --verde-claro: #b9e4cf;
     --vermelho: #c2413b;
+    --vermelho-escuro: #8b2d26;
     --raio: 16px;
 }
 
@@ -151,6 +152,13 @@ h3 {
     font-size: 0.95rem;
 }
 
+#listaGastos .infGasto, #listaGastos .botoesGasto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
 .gasto {
     display: flex;
     justify-content: space-between;
@@ -171,6 +179,28 @@ h3 {
     white-space: nowrap;
 }
 
+.gasto button.alterarGasto{
+    background: none;
+    color: var(--tinta);
+    padding: 1px;
+    transition: color 0.15s, transform 0.1s;
+}
+
+.gasto button.alterarGasto:hover{
+    color: var(--suave);
+}
+
+.gasto button.excluirGasto{
+    background: none;
+    color: var(--vermelho);
+    padding: 1px;
+    transition: color 0.15s, transform 0.1s;
+}
+
+.gasto button.excluirGasto:hover{
+    color: var(--vermelho-escuro);
+}
+
 /* Total */
 .total {
     display: flex;
@@ -187,6 +217,14 @@ h3 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--vermelho);
+}
+
+button#reiniciarGastos {
+    background: var(--vermelho);
+}
+
+button#reiniciarGastos:hover {
+    background: var(--vermelho-escuro);
 }
 
 @media (max-width: 400px) {

@@ -60,6 +60,8 @@ public class cadastroProdutos extends javax.swing.JFrame {
 
         jLabel6.setText("Preço");
 
+        txtPreco.addActionListener(this::txtPrecoActionPerformed);
+
         jLabel7.setText("Categoria");
 
         txtCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria1", "Categoria2", "Categoria3" }));
@@ -184,8 +186,12 @@ public class cadastroProdutos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Informe o nome do produto!");
         }else if(marca.isEmpty()){
              JOptionPane.showMessageDialog(this, "Informe a marca do produto!");
+        }else if(Double.parseDouble(preco) < 0){
+            JOptionPane.showMessageDialog(this, "Informe um preço igual ou maior que 0!");
         }else if(preco.isEmpty()){
             JOptionPane.showMessageDialog(this, "Informe o preço do produto!");
+        }else if(Integer.parseInt(qtdeEstoque) < 0){
+            JOptionPane.showMessageDialog(this, "Informe uma quantidade igual ou maior que 0!");
         }else if(qtdeEstoque.isEmpty()){
             JOptionPane.showMessageDialog(this, "Informe a quantidade em estoque do produto!");
         }else{
@@ -202,6 +208,10 @@ public class cadastroProdutos extends javax.swing.JFrame {
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCategoriaActionPerformed
+
+    private void txtPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecoActionPerformed
 
     /**
      * @param args the command line arguments

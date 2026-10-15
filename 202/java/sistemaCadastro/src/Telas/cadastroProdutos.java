@@ -182,18 +182,23 @@ public class cadastroProdutos extends javax.swing.JFrame {
         
         if(codigo.isEmpty()){
             JOptionPane.showMessageDialog(this, "Digite o código do produto!");
+            txtCodigo.requestFocus();
         }else if(nome.isEmpty()){
             JOptionPane.showMessageDialog(this, "Informe o nome do produto!");
+            txtCodigo.requestFocus();
         }else if(marca.isEmpty()){
              JOptionPane.showMessageDialog(this, "Informe a marca do produto!");
+             txtCodigo.requestFocus();
         }else if(Double.parseDouble(preco) < 0){
             JOptionPane.showMessageDialog(this, "Informe um preço igual ou maior que 0!");
         }else if(preco.isEmpty()){
             JOptionPane.showMessageDialog(this, "Informe o preço do produto!");
+            txtCodigo.requestFocus();
         }else if(Integer.parseInt(qtdeEstoque) < 0){
             JOptionPane.showMessageDialog(this, "Informe uma quantidade igual ou maior que 0!");
         }else if(qtdeEstoque.isEmpty()){
             JOptionPane.showMessageDialog(this, "Informe a quantidade em estoque do produto!");
+            txtCodigo.requestFocus();
         }else{
             JOptionPane.showMessageDialog(this, 
                 "Seja bem-vindo!\n\nDados:\nCódigo: " + codigo

@@ -147,5 +147,6 @@ function excluirGasto(index) {
     localStorage.setItem("total", total.toString());
     localStorage.setItem("gastos", JSON.stringify(gastos));
     // listaGastos.removeChild(listaGastos.children[index])
-    listaGastos.children[index].remove()
+    // listaGastos.children[index].remove()
+    carregarGastos();
 }

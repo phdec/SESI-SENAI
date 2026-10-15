@@ -42,6 +42,8 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Senha:");
 
+        txtNome.addActionListener(this::txtNomeActionPerformed);
+
         txtSenha.addActionListener(this::txtSenhaActionPerformed);
 
         jButton1.setText("Entrar");
@@ -106,6 +108,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments

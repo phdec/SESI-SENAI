@@ -197,6 +197,8 @@ public class cadastroClientes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        telaPrincipal telaPrincipal = new telaPrincipal();
+        telaPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -210,7 +212,16 @@ public class cadastroClientes extends javax.swing.JFrame {
         String cidade = txtCidade.getText().trim();
         String sexo = txtSexo.getSelectedItem().toString();
         
-        JOptionPane.showMessageDialog(this, 
+        if(nome.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite o nome de usuário!");
+        }else if(cpf.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Informe o CPF do cliente!");
+        }else if(cpf.length() < 11){
+             JOptionPane.showMessageDialog(this, "Informe um CPF válido!");
+        }else if(email.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite o email!");
+        }else{
+            JOptionPane.showMessageDialog(this, 
                 "Seja bem-vindo!\n\nDados:\nNome: " + nome
                 + "\nCPF: " + cpf
                 + "\nData de Nascimento: " + dataNascimento
@@ -218,6 +229,7 @@ public class cadastroClientes extends javax.swing.JFrame {
                 + "\nEmail: " + email
                 + "\nCidade: " + cidade
                 + "\nSexo: " + sexo);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

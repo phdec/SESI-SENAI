@@ -33,13 +33,14 @@ document.getElementById("listaGastos").addEventListener("click", (e) => {
     // cria dois arrays com os botões e pega o index a partir deles; seria possível através do .gasto
 
     let botoesAlterar = [...document.getElementsByClassName("alterarGasto")]
+    let botoesExcluir = [...document.getElementsByClassName("excluirGasto")]
 
     if(botoesAlterar.includes(botaoClicado)){
         let index = botoesAlterar.indexOf(botaoClicado)
         alterarGasto(index)
     }
     if(botoesExcluir.includes(botaoClicado)){
-        let index = Array.from(document.getElementsByClassName("excluirGasto")).indexOf(botaoClicado)
+        let index = botoesExcluir.indexOf(botaoClicado)
         let confirmacao = confirm("Deseja realmente excluir este gasto?")
         if(confirmacao){
             excluirGasto(index)

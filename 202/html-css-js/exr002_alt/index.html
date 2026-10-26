@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos</title>
+    <script src="https://kit.fontawesome.com/b7eb7e2783.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Meu controle de gastos</h1>
+        <section class="saldo">
+            <p>Saldo Disponível</p>
+            <div class="saldo-container">
+                <h2 id="saldo"></h2>
+                <button id="alterarSaldo"><i class="fa-solid fa-pen"></i></button>
+            </div>
+        </section>
+        <section class="formulario">
+            <input type="text" id="descricao" placeholder="Descrição do Gasto">
+            <input type="number" id="valor" placeholder="Valor" min="0" inputmode="decimal">
+            <button onclick="adicionarGasto()">Adicionar Gasto</button>
+        </section>
+        <h3>Meus gastos</h3>
+        <div id="listaGastos"></div>
+        <section class="total">
+            <p>Total gasto</p>
+            <h2 id="total">R$0,00</h2>
+        </section>
+        <button id="reiniciarGastos">Reiniciar Gastos</button>
+    </main>
+</body>
+</html>

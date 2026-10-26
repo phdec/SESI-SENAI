@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criptografia de Arquivos - AES-GCM</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f5f7fa;
+    color: #1f2937;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  p.sub { color: #6b7280; margin-top: 0; font-size: 0.9rem; }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    margin-bottom: 20px;
+  }
+  label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+  input[type="file"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    background: #fff;
+  }
+  input[type="password"] { font-family: monospace; }
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 4px;
+  }
+  button:hover:not(:disabled) { filter: brightness(0.95); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .encrypt { background: #2563eb; color: #fff; }
+  .decrypt { background: #059669; color: #fff; }
+  .status {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+  }
+  .status.ok { display: block; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+  .status.err { display: block; background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+  .status.info { display: block; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+  .hint { font-size: 0.8rem; color: #6b7280; margin-top: -8px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<h1>🔐 Criptografia de Arquivos</h1>
+<p class="sub">AES-256-GCM + PBKDF2 — tudo processado localmente no seu navegador.</p>
+
+<div class="card">
+  <label for="fileInput">Arquivo</label>
+  <input type="file" id="fileInput">
+
+  <label for="keyInput">Chave (senha)</label>
+  <input type="password" id="keyInput" placeholder="Digite uma chave forte...">
+  <p class="hint">Guarde a chave! Sem ela é impossível recuperar o conteúdo.</p>
+
+  <button class="encrypt" id="btnEncrypt">🔒 Criptografar</button>
+  <button class="decrypt" id="btnDecrypt" style="margin-top:10px;">🔓 Descriptografar</button>
+
+  <div class="status" id="status"></div>
+</div>
+
+<script>
+// ---------- Utilidades ----------
+const enc = new TextEncoder();
+const dec = new TextDecoder();
+
+const MAGIC = "AESGCM01"; // cabeçalho para identificar arquivos criptografados
+const ITERATIONS = 250000;
+
+function bufToBase64(buf) {
+  const bytes = new Uint8Array(buf);
+  let bin = "";
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+
+function base64ToBuf(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+
+function concatBytes(...arrs) {
+  const total = arrs.reduce((s, a) => s + a.length, 0);
+  const out = new Uint8Array(total);
+  let off = 0;
+  for (const a of arrs) { out.set(a, off); off += a.length; }
+  return out;
+}
+
+async function deriveKey(password, salt, usage) {
+  const baseKey = await crypto.subtle.importKey(
+    "raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]
+  );
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt, iterations: ITERATIONS, hash: "SHA-256" },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    false,
+    [usage]
+  );
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.className = "status " + type;
+}
+
+function download(filename, data) {
+  const blob = new Blob([data], { type: "application/octet-stream" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ---------- Criptografar ----------
+async function encryptFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const password = document.getElementById("keyInput").value;
+
+  if (!file) return setStatus("Selecione um arquivo.", "err");
+  if (!password) return setStatus("Informe a chave.", "err");
+
+  try {
+    setStatus("Criptografando...", "info");
+
+    // Converte o arquivo para base64 para empacotar como JSON (arquivos de texto)
+    const fileBuffer = await file.arrayBuffer();
+    const fileB64 = bufToBase64(fileBuffer);
+
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const key = await deriveKey(password, salt, "encrypt");
+
+    const ciphertext = await crypto.subtle.encrypt(
+      { name: "AES-GCM", iv },
+      key,
+      enc.encode(fileB64)
+    );
+
+    const payload = {
+      magic: MAGIC,
+      filename: file.name,
+      salt: bufToBase64(salt),
+      iv: bufToBase64(iv),
+      data: bufToBase64(ciphertext)
+    };
+
+    const blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
+    download(file.name + ".enc", blob);
+    setStatus("✅ Arquivo criptografado e baixado como " + file.name + ".enc", "ok");
+  } catch (e) {
+    console.error(e);
+    setStatus("Erro ao criptografar: " + e.message, "err");
+  }
+}
+
+// ---------- Descriptografar ----------
+async function decryptFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const password = document.getElementById("keyInput").value;
+
+  if (!file) return setStatus("Selecione um arquivo .enc.", "err");
+  if (!password) return setStatus("Informe a chave.", "err");
+
+  try {
+    setStatus("Descriptografando...", "info");
+
+    const text = await file.text();
+    const payload = JSON.parse(text);
+
+    if (payload.magic !== MAGIC) {
+      return setStatus("Arquivo não reconhecido como criptografado por esta ferramenta.", "err");
+    }
+
+    const salt = base64ToBuf(payload.salt);
+    const iv = base64ToBuf(payload.iv);
+    const ciphertext = base64ToBuf(payload.data);
+
+    const key = await deriveKey(password, salt, "decrypt");
+
+    let plaintext;
+    try {
+      plaintext = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv },
+        key,
+        ciphertext
+      );
+    } catch {
+      return setStatus("❌ Chave incorreta ou arquivo corrompido.", "err");
+    }
+
+    const fileB64 = dec.decode(plaintext);
+    const fileBytes = base64ToBuf(fileB64);
+
+    const outName = payload.filename.replace(/\.enc$/, "") || "arquivo.txt";
+    download(outName, fileBytes);
+    setStatus("✅ Arquivo descriptografado e baixado como " + outName, "ok");
+  } catch (e) {
+    console.error(e);
+    setStatus("Erro ao descriptografar: " + e.message, "err");
+  }
+}
+
+// ---------- Eventos ----------
+document.getElementById("btnEncrypt").addEventListener("click", encryptFile);
+document.getElementById("btnDecrypt").addEventListener("click", decryptFile);
+</script>
+
+</body>
+</html>

@@ -51,6 +51,8 @@ document.getElementById("listaGastos").addEventListener("click", (e) => {
 botaoReiniciarGastos.addEventListener("click", ()=> {
     let confirmacao = confirm("Deseja realmente reiniciar? Todos os gastos serão apagados.")
     if(!confirmacao){return}
+    saldo += total
+    localStorage.setItem("saldo", saldo.toString());
     localStorage.removeItem("total");
     localStorage.removeItem("gastos");
     total = 0

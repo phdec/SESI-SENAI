@@ -17,8 +17,8 @@ public abstract class Veiculo {
         this.marca = marca;
     }
 
-    public String getAno(){
-        return marca;
+    public int getAno(){
+        return ano;
     }
 
     public void setAno(int ano){
